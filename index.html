@@ -1,0 +1,538 @@
+
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+
+<title>Vivek Singh Rajput | Physics Classes</title>
+
+<style>
+
+@import url('https://fonts.googleapis.com/css2?family=Orbitron:wght@400;600&family=Poppins:wght@300;400;500&display=swap');
+
+*{
+margin:0;
+padding:0;
+box-sizing:border-box;
+font-family:Poppins;
+scroll-behavior:smooth;
+}
+
+/* BACKGROUND */
+
+body{
+background:
+linear-gradient(rgba(0,0,0,0.7),rgba(0,0,0,0.9)),
+url("https://images.unsplash.com/photo-1635070041078-e363dbe005cb");
+background-size:cover;
+background-attachment:fixed;
+color:white;
+}
+
+/* Animated gradient glow */
+
+body::before{
+content:"";
+position:fixed;
+top:0;
+left:0;
+width:100%;
+height:100%;
+background:linear-gradient(45deg,#ff00cc,#00fff2,#ffae00,#7a00ff);
+opacity:0.15;
+background-size:400% 400%;
+animation:gradientMove 10s infinite;
+z-index:-1;
+}
+
+@keyframes gradientMove{
+0%{background-position:0% 50%;}
+50%{background-position:100% 50%;}
+100%{background-position:0% 50%;}
+}
+
+/* NAVBAR */
+
+nav{
+display:flex;
+justify-content:space-between;
+align-items:center;
+padding:20px 8%;
+background:rgba(0,0,0,0.6);
+backdrop-filter:blur(10px);
+position:sticky;
+top:0;
+z-index:1000;
+}
+
+nav h2{
+font-family:Orbitron;
+}
+
+.nav-links{
+display:flex;
+}
+
+nav a{
+color:white;
+text-decoration:none;
+margin-left:20px;
+}
+
+nav a:hover{
+color:#00fff2;
+}
+
+/* MOBILE MENU */
+
+.menu-toggle{
+display:none;
+font-size:28px;
+cursor:pointer;
+}
+
+/* HERO */
+
+.hero{
+text-align:center;
+padding:120px 20px;
+}
+
+.hero h1{
+font-size:50px;
+font-family:Orbitron;
+}
+
+.hero p{
+margin-top:15px;
+opacity:0.8;
+}
+
+/* BUTTON */
+
+.btn{
+display:inline-block;
+margin:20px 10px;
+padding:12px 30px;
+border-radius:30px;
+background:linear-gradient(45deg,#ff00cc,#00fff2);
+color:black;
+font-weight:bold;
+text-decoration:none;
+}
+
+/* SECTIONS */
+
+section{
+padding:80px 10%;
+}
+
+/* TEACHER */
+
+.teacher{
+display:flex;
+flex-wrap:wrap;
+align-items:center;
+gap:40px;
+}
+
+.teacher img{
+width:250px;
+border-radius:15px;
+}
+
+/* WHY CHOOSE */
+
+.why-container{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(220px,1fr));
+gap:30px;
+}
+
+.why-card{
+background:rgba(255,255,255,0.08);
+padding:25px;
+border-radius:15px;
+text-align:center;
+transition:0.3s;
+}
+
+.why-card:hover{
+transform:scale(1.05);
+box-shadow:0 0 15px #00fff2;
+}
+
+/* RESULTS */
+
+.results-container{
+display:flex;
+justify-content:center;
+flex-wrap:wrap;
+gap:30px;
+}
+
+.result-box{
+background:rgba(255,255,255,0.08);
+padding:30px;
+border-radius:15px;
+text-align:center;
+min-width:160px;
+}
+
+/* NOTES */
+
+.notes{
+display:grid;
+grid-template-columns:repeat(auto-fit,minmax(250px,1fr));
+gap:30px;
+}
+
+.card{
+background:rgba(255,255,255,0.08);
+padding:25px;
+border-radius:15px;
+text-align:center;
+}
+
+/* REVIEWS */
+
+.review-slider{
+display:flex;
+overflow-x:auto;
+gap:20px;
+scroll-snap-type:x mandatory;
+}
+
+.review{
+background:rgba(255,255,255,0.08);
+padding:20px;
+border-radius:15px;
+min-width:260px;
+scroll-snap-align:center;
+}
+
+/* CONTACT */
+
+.contact-form{
+max-width:500px;
+margin:auto;
+display:flex;
+flex-direction:column;
+gap:15px;
+}
+
+.contact-form input,
+.contact-form textarea{
+padding:12px;
+border:none;
+border-radius:10px;
+background:rgba(255,255,255,0.1);
+color:white;
+}
+
+/* FOOTER */
+
+footer{
+text-align:center;
+padding:20px;
+}
+
+/* WHATSAPP */
+
+.whatsapp{
+position:fixed;
+bottom:20px;
+right:20px;
+background:#25D366;
+color:white;
+font-size:28px;
+padding:15px;
+border-radius:50%;
+text-decoration:none;
+}
+
+/* MOBILE */
+
+@media (max-width:768px){
+
+.menu-toggle{
+display:block;
+}
+
+.nav-links{
+position:absolute;
+top:70px;
+left:0;
+width:100%;
+background:black;
+flex-direction:column;
+display:none;
+text-align:center;
+}
+
+.nav-links a{
+margin:15px 0;
+}
+
+.hero h1{
+font-size:32px;
+}
+
+.teacher{
+flex-direction:column;
+text-align:center;
+}
+
+.teacher img{
+width:180px;
+}
+
+}
+
+</style>
+</head>
+
+<body>
+
+<nav>
+
+<h2>VSR Physics</h2>
+
+<div class="menu-toggle" onclick="toggleMenu()">☰</div>
+
+<div class="nav-links">
+
+<a href="#about">About</a>
+<a href="#notes">Notes</a>
+<a href="#videos">Videos</a>
+<a href="#reviews">Reviews</a>
+<a href="#contact">Contact</a>
+
+</div>
+
+</nav>
+
+<section class="hero">
+
+<h1>Physics by Sir Vivek Singh Rajput</h1>
+
+<p>Concept Based Physics Classes for JEE & NEET Aspirants</p>
+
+<a class="btn" href="https://t.me/vivek2305singh">Join Telegram</a>
+
+<a class="btn" href="https://youtube.com/@ncertphysics9504">Watch YouTube</a>
+
+</section>
+
+
+<section id="about" class="teacher">
+
+<img src="teacher.jpg">
+
+<div>
+
+<h2>About Sir Vivek Singh Rajput</h2>
+
+<p>
+Sir Vivek Singh Rajput is a dedicated Physics teacher known for explaining
+complex concepts in a simple and logical way. His teaching focuses on
+building strong fundamentals so that students can understand Physics
+deeply and solve numerical problems with confidence.
+</p>
+
+<br>
+
+<p>
+He guides students preparing for competitive exams like <b>JEE</b> and <b>NEET</b>
+through concept-based learning, regular practice, and well-structured notes.
+</p>
+
+<br>
+
+<p>
+Through his <b>YouTube channel</b> and <b>Telegram group</b>, students can access
+lectures, study material, and important exam updates to support their preparation.
+</p>
+
+<br>
+
+<p>
+🎓 <b>Specialization:</b> JEE & NEET Physics<br>
+📚 <b>Teaching Style:</b> Concept-Based Learning<br>
+📺 <b>Online Support:</b> YouTube & Telegram
+</p>
+
+</div>
+
+</section>
+
+<section id="why">
+
+<h2 style="text-align:center">What Makes Our Classes Special</h2>
+
+<br>
+
+<div class="why-container">
+
+<div class="why-card">
+<h3>Concept Clarity</h3>
+<p>Simple explanation of difficult Physics concepts.</p>
+</div>
+
+<div class="why-card">
+<h3>Exam Preparation</h3>
+<p>Focused preparation for JEE and NEET.</p>
+</div>
+
+<div class="why-card">
+<h3>Quality Notes</h3>
+<p>Structured notes for quick revision.</p>
+</div>
+
+<div class="why-card">
+<h3>Online Support</h3>
+<p>YouTube lectures and Telegram study material.</p>
+</div>
+
+</div>
+
+</section>
+
+<section id="notes">
+
+<h2>Physics Notes</h2>
+
+<br>
+
+<div class="notes">
+
+<div class="card">
+<h3>Thermodynamics</h3>
+<a href="thermo.pdf">Open Notes</a>
+</div>
+
+<div class="card">
+<h3>Wave Optics</h3>
+<a href="wo.pdf">Open Notes</a>
+</div>
+
+<div class="card">
+<h3>Dual Work Power Energy</h3>
+<a href="wpe.pdf">Open Notes</a>
+</div>
+
+</div>
+
+</section>
+
+<section id="videos">
+
+<h2>Latest Lecture</h2>
+
+<br>
+
+<div style="text-align:center;">
+
+<a href="https://youtu.be/25FwxjOtZLY" target="_blank">
+
+<img src="https://img.youtube.com/vi/25FwxjOtZLY/hqdefault.jpg"
+style="width:80%; max-width:900px; border-radius:10px;">
+
+</a>
+
+<p>Click the video to watch on YouTube</p>
+
+</div>
+
+</section>
+
+<section id="reviews">
+
+<h2 style="text-align:center">Student Reviews</h2>
+
+<br>
+
+<div class="review-slider">
+
+<div class="review">
+⭐ ⭐ ⭐ ⭐ ⭐
+<p>"Sir explains Physics concepts very clearly."</p>
+<b>- Rohit</b>
+</div>
+
+<div class="review">
+⭐ ⭐ ⭐ ⭐ ⭐
+<p>"Best Physics teacher for NEET preparation."</p>
+<b>- Manoj</b>
+</div>
+
+<div class="review">
+⭐ ⭐ ⭐ ⭐ ⭐
+<p>"Very interactive classes."</p>
+<b>- Nidhi</b>
+</div>
+
+</div>
+
+</section>
+
+<section id="contact">
+
+<h2 style="text-align:center">Contact Us</h2>
+
+<br>
+
+<form class="contact-form">
+
+<input type="text" placeholder="Your Name" required>
+<input type="email" placeholder="Your Email" required>
+<textarea placeholder="Your Message"></textarea>
+
+<button class="btn">Send Message</button>
+
+</form>
+
+<br>
+
+<p style="text-align:center">📞 9670050044</p>
+<p style="text-align:center">📧 Vivekkr.singh89@gmail.com</p>
+
+</section>
+
+<footer>
+
+© 2026 Vivek Singh Rajput Physics Classes
+
+</footer>
+
+<a href="https://wa.me/919670050044" class="whatsapp">💬</a>
+
+<script>
+
+function toggleMenu(){
+const menu=document.querySelector(".nav-links");
+menu.style.display = menu.style.display==="flex" ? "none":"flex";
+}
+
+function animateCounter(id,target){
+let count=0;
+let interval=setInterval(()=>{
+count+=Math.ceil(target/100);
+if(count>=target){
+count=target;
+clearInterval(interval);
+}
+document.getElementById(id).innerText=count;
+},20);
+}
+
+animateCounter("studentCount",500);
+animateCounter("jeeCount",120);
+animateCounter("neetCount",80);
+
+</script>
+
+</body>
+</html>
+```
